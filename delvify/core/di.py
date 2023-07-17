@@ -7,12 +7,12 @@ from sqlalchemy.orm import Session
 
 from delvify.core import app_settings
 
-# from .db import SessionLocal
+from .db import SessionLocal
 
 
 def get_db() -> Session:
     try:
-        db = Session()  # change to SessionLocal() if you are using a database
+        db = SessionLocal()
         return db
     finally:
         db.close()
