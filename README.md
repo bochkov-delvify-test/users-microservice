@@ -1,8 +1,10 @@
-# microservice-template
+# users-microservice
+
+![checks status](https://github.com/delvify-assessment/users-microservice/actions/workflows/pr.yml/badge.svg)
 
 ## Description
 
-This is a template for a microservice based on FastAPI and Docker.
+A microservice to handle user-related requests based on FastAPI and Docker.
 
 ## Requirements
 
@@ -92,7 +94,6 @@ After the service is up and running, you can access the API documentation at:
 
 #### Code formatting
 
-
 Please check the [Makefile](Makefile) for the authorities on a code style (check `do-lint` target).  
 You can also use the [pre-commit](https://pre-commit.com/) tool to automatically format your code before committing.
 
@@ -117,21 +118,9 @@ The pipeline runs the following steps:
 │   │   ├── db - Database configuration
 │   │   ├── di - Dependency injection
 │   │   ├── logger - Logging configuration
+│   │   ├── security - Creating JWT tokens
 │   │   ├── settings - Service settings
 │   ├── crud - Database CRUD operations
 │   ├── models - Database configuration
 │   ├── schemas - Pydantic schemas
 │   ├── main.py - Entrypoint
-```
-
-## How to use template
-
-1. Create a new repository using this template
-2. Replace all occurrences of `microservice-template` with your service name
-3. For API requests that need user authorization use get_current_user_id() function from `delvify.core.di` module
-
-### If your microservice use a database
-1. Update last line of "settings.py"
-2. Update get_db() in di.py and uncomment import there
-3. Update docker-compose.yml
-4. Don't forget to generate migrations and migrate DB after changing models
